@@ -17,7 +17,7 @@ header {
   width: 150px;
 }
 
-main > div > h1 {
+.welcome > h1 {
   color: white;
   font-family: "Outfit", sans-serif;
   font-size: 60px;
@@ -27,21 +27,21 @@ main > div > h1 {
 .boldtitle {
   font-weight: bold;
 }
-main > div > h2 {
+.welcome > h2 {
   color: #d20094;
   font-family: "Outfit", sans-serif;
   margin-top: 10px;
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
-main > div > p {
+.welcome > p {
   color: white;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
 
-main > div > ul {
+.welcome > ul {
   color: white;
   font-family: "Inter", sans-serif;
   padding-top: 40px;
