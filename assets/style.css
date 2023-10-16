@@ -1,0 +1,11 @@
+.clock-container {
+  border: solid black;
+}
+
+.countdown {
+  text-align: center;
+}
+
+#time {
+  font-size: 36px;
+}
