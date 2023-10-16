@@ -1,11 +1,86 @@
-.clock-container {
-  border: solid black;
+body {
+  background-image: url(./images/Images/bg.jpg);
+  background-size: cover;
+  color: white;
 }
 
-.countdown {
+.clock-container {
+  width: 100px;
+  border: solid;
+  border-radius: 50%;
+  padding: 10px;
   text-align: center;
+  object-position: right;
+  display: inline-block;
+}
+
+.timerText {
+  font-size: 10px;
+}
+
+#time {
+  font-size: 40px;
+}
+
+button {
+  width: 50%;
+  height: 60px;
+  opacity: 10%;
+  border-radius: 20px;
+}
+/* .countdown {
+  padding: 30px;
 }
 
 #time {
   font-size: 36px;
 }
+.doughnut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dntMain-center {
+  width: 100%;
+  height: 100vh;
+}
+
+.circle-container {
+  width: 400px;
+  height: 400px;
+  background-color: #ddd;
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.semicircle {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.semicircle:nth-child(1) {
+  background-color: #088b8b;
+  z-index: 2;
+}
+.semicircle:nth-child(2) {
+  background-color: #088b8b;
+  z-index: 3;
+}
+.semicircle:nth-child(3) {
+  background-color: #ddd;
+  z-index: 4;
+  display: none;
+}
+
+.outermost-circle {
+  width: 380px;
+  height: 380px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 5;
+} */
