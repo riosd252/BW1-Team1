@@ -108,3 +108,5 @@ for (let i = 0; i < questions.length; i++) {
   if (questions[i].type === "multiple") {
   }
 }
+const agreed = document.querySelector("form");
+agreed.onsubmit = console.log("attiva funzione");
