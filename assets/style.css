@@ -6,7 +6,7 @@ body {
 
 .clock-container {
   width: 100px;
-  border: solid;
+  border: solid aqua;
   border-radius: 50%;
   padding: 10px;
   text-align: center;
@@ -28,59 +28,33 @@ button {
   opacity: 10%;
   border-radius: 20px;
 }
-/* .countdown {
-  padding: 30px;
+
+.countdown {
+  text-align: center;
 }
 
-#time {
-  font-size: 36px;
+.chart {
+  position: relative;
+  display: inline-block;
 }
+
+svg {
+  transform: rotate(-90deg);
+}
+
+.doughnut-background {
+  fill: none;
+  stroke: #f2f2f2;
+  stroke-width: 20;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 0;
+}
+
 .doughnut {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  fill: none;
+  stroke: #3498db;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 0;
 }
-.dntMain-center {
-  width: 100%;
-  height: 100vh;
-}
-
-.circle-container {
-  width: 400px;
-  height: 400px;
-  background-color: #ddd;
-  border-radius: 50%;
-  position: absolute;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.semicircle {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.semicircle:nth-child(1) {
-  background-color: #088b8b;
-  z-index: 2;
-}
-.semicircle:nth-child(2) {
-  background-color: #088b8b;
-  z-index: 3;
-}
-.semicircle:nth-child(3) {
-  background-color: #ddd;
-  z-index: 4;
-  display: none;
-}
-
-.outermost-circle {
-  width: 380px;
-  height: 380px;
-  background-color: white;
-  border-radius: 50%;
-  z-index: 5;
-} */
