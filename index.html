@@ -38,7 +38,9 @@
         <form class="promise">
           <input type="checkbox" id="agree" onchange="document.getElementById('submit').disabled = !this.checked" required />
           <label class="label" for="agree">I promise to answer myself without help from anyone</label>
-          <button id="submit" name="sendNewSms" disabled>PROCEED</button>
+          <button type="submit" id="submit" name="sendNewSms" disabled>
+            <a href="./index-benchmark.html">PROCEED</a>
+          </button>
         </form>
       </div>
     </div>
