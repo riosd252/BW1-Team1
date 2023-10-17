@@ -1,3 +1,13 @@
+/* MICRO TASKS
+1) PASSARE DALLA HOME ALLE DOMANDE 
+2) GENERARE DINAMICAMENTE LA SCHERMATA IN BASE AL TIPO DI DOMANDA (DOMANDA E OPZIONI)
+3) IN CONTEMPORANEA DEVE PARTIRE IL TIMER
+4) GENERARE DOMANDE SUCCESSIVE DOPO CHE L'UTENTE HA SCELTO UNA RISPOSTA
+5) SALVATAGGIO DELLE RISPOSTE
+6) 
+
+*/
+
 let studentScore = [];
 
 const questions = [
@@ -95,18 +105,3 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-
-for (let i = 0; i < questions.length; i++) {
-  const benchmarkMain = document.querySelector("main");
-  const benchmarkDiv = document.getElementById("benchmark-div");
-
-  const question = document.createElement("h1");
-  question.innerText = questions[i].question;
-
-  const form = document.createElement("form");
-
-  if (questions[i].type === "multiple") {
-  }
-}
-const agreed = document.querySelector("form");
-agreed.onsubmit = console.log("attiva funzione");
