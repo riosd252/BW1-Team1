@@ -84,6 +84,7 @@ button::before {
   text-align: right;
 }
 .timerText {
+  font-family: "Outfit", sans-serif;
   font-size: 10px;
   color: white;
 }
