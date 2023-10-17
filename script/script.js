@@ -105,3 +105,34 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+
+for (let i = 0; i < questions.length; i++) {
+  const benchmarkMain = document.querySelector("main");
+  const benchmarkDiv = document.getElementById("benchmark-div");
+
+  const question = document.createElement("h1");
+  question.innerText = questions[i].question;
+
+  const form = document.createElement("form");
+
+  if (questions[i].type === "multiple") {
+  }
+}
+const agreed = document.querySelector("form");
+agreed.onsubmit = console.log("attiva funzione");
+let totalSeconds = 60;
+
+function updateTimer() {
+  if (totalSeconds <= 0) {
+    clearInterval(timerId);
+    document.getElementById("time").textContent = "00";
+    return;
+  }
+
+  const seconds = String(totalSeconds).padStart(2, "0");
+  document.getElementById("time").textContent = seconds;
+  totalSeconds--;
+}
+
+const timerId = setInterval(updateTimer, 1000);
+updateTimer(60);
