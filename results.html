@@ -14,7 +14,9 @@
   </head>
   <body>
     <header>
-      <img class="logo" src="./assets/images/Images/epicode_logo.png" alt="Epicode Logo" />
+      <figure class="logo">
+        <img src="./assets/images/Images/epicode_logo.png" alt="Epicode Logo" />
+      </figure>
     </header>
     <main>
       <div class="resultsTitleBox">
@@ -22,20 +24,24 @@
         <h3>The summary of your answers:</h3>
       </div>
       <div class="allBoxes">
-        <div class="CorrectAnswers">
+        <div class="box1">
           <h2 class="correctText">Correct</h2>
-          <h2 class="correctPercent"></h2>
-          <h4 class="correctOutOf"></h4>
+          <h2 class="correctPercent">66.7%</h2>
+          <p class="correctOutOf">4/6 questions</p>
         </div>
-        <div class="DoughnutChart">
-          <div class="pie"></div>
-          <h4 class="answerValue"></h4>
-          <p>We'll send you the certificate in few minutes. Check your email (including promotions/spam folder)</p>
+        <div class="DoughnutBox">
+          <div class="donut">
+            <div class="textInsideDonut">
+              <h4 class="answerValue">Congratulations!</h4>
+              <h4 class="blue-h4">You passed the exam.</h4>
+              <p>We'll send you the certificate in few minutes. Check your email (including promotions/spam folder)</p>
+            </div>
+          </div>
         </div>
-        <div class="WrongAnswers">
+        <div class="box2">
           <h2 class="wrongText">Wrong</h2>
-          <h2 class="wrongPercent"></h2>
-          <h4 class="wrongOutOf"></h4>
+          <h2 class="wrongPercent">33.3%</h2>
+          <p class="wrongOutOf">2/6 questions</p>
         </div>
       </div>
     </main>
