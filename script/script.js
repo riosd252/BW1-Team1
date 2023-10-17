@@ -106,7 +106,7 @@ const questions = [
   },
 ];
 
-for (let i = 0; i < questions.length; i++) {
+/*for (let i = 0; i < questions.length; i++) {
   const benchmarkMain = document.querySelector("main");
   const benchmarkDiv = document.getElementById("benchmark-div");
 
@@ -117,12 +117,11 @@ for (let i = 0; i < questions.length; i++) {
 
   if (questions[i].type === "multiple") {
   }
-}
-const agreed = document.querySelector("form");
-agreed.onsubmit = console.log("attiva funzione");
-let totalSeconds = 60;
+}*/
 
-function updateTimer() {
+/*let totalSeconds = 60;
+
+ function updateTimer() {
   if (totalSeconds <= 0) {
     clearInterval(timerId);
     document.getElementById("time").textContent = "00";
@@ -135,4 +134,27 @@ function updateTimer() {
 }
 
 const timerId = setInterval(updateTimer, 1000);
-updateTimer(60);
+updateTimer(60); */
+
+const generateBenchmark = () => {
+  for (let i = 0; i < questions.length; i++) {
+    const main = document.querySelector("main");
+
+    const h1 = document.querySelector("h1");
+    h1.innerText = questions[i].question;
+
+    /*let myInterval = setTimeout(() => {
+      i++;
+    }, 10000);*/
+  }
+};
+
+/*const timer = () => {
+  let i = 0;
+  let myInterval = setTimeout(() => {
+    i++, console.log(generateBenchmark());
+  }, 5000);
+  if (i === 60) {
+    clearInterval;
+  }
+};*/
