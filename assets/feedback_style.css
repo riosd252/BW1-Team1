@@ -11,16 +11,13 @@ body {
   width: max-content;
   margin-top: 5rem;
   margin-inline: auto;
+  text-align: center;
+  line-height: 2rem;
 }
 
 #logo {
   max-width: 10rem;
   margin-left: 10rem;
-}
-
-main {
-  text-align: center;
-  line-height: 2rem;
 }
 
 h1 {
