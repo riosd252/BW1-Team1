@@ -8,8 +8,6 @@
 
 */
 
-let studentScore = [];
-
 const questions = [
   {
     category: "Science: Computers",
@@ -106,55 +104,98 @@ const questions = [
   },
 ];
 
-/*for (let i = 0; i < questions.length; i++) {
-  const benchmarkMain = document.querySelector("main");
-  const benchmarkDiv = document.getElementById("benchmark-div");
+let studentScore = [];
 
-  const question = document.createElement("h1");
-  question.innerText = questions[i].question;
+let questionNumber = 0;
 
-  const form = document.createElement("form");
+// const formNode = document.querySelector("form");
 
-  if (questions[i].type === "multiple") {
+const mainDiv = document.querySelector(".benchmark");
+
+window.onload = function () {
+  const h1 = document.querySelector("h1");
+  h1.innerText = questions[questionNumber].question;
+
+  if (questions[questionNumber].type === "multiple") {
+    const formNode = document.createElement("form");
+
+    const button1 = document.createElement("button");
+    button1.className = "btn";
+    const button2 = document.createElement("button");
+    button2.className = "btn";
+    const br = document.createElement("br");
+    const button3 = document.createElement("button");
+    button3.className = "btn";
+    const button4 = document.createElement("button");
+    button4.className = "btn";
+
+    formNode.appendChild(button1);
+    formNode.appendChild(button2);
+    formNode.appendChild(br);
+    formNode.appendChild(button3);
+    formNode.appendChild(button4);
+
+    mainDiv.appendChild(formNode);
+  } else {
+    const formNode = document.createElement("form");
+
+    const button1 = document.createElement("button");
+    button1.className = "btn";
+    const button2 = document.createElement("button");
+    button2.className = "btn";
+
+    formNode.appendChild(button1);
+    formNode.appendChild(button2);
+
+    mainDiv.appendChild(formNode);
   }
-}*/
 
-/*let totalSeconds = 60;
-
- function updateTimer() {
-  if (totalSeconds <= 0) {
-    clearInterval(timerId);
-    document.getElementById("time").textContent = "00";
-    return;
-  }
-
-  const seconds = String(totalSeconds).padStart(2, "0");
-  document.getElementById("time").textContent = seconds;
-  totalSeconds--;
-}
-
-const timerId = setInterval(updateTimer, 1000);
-updateTimer(60); */
-
-const generateBenchmark = () => {
-  for (let i = 0; i < questions.length; i++) {
-    const main = document.querySelector("main");
-
-    const h1 = document.querySelector("h1");
-    h1.innerText = questions[i].question;
-
-    /*let myInterval = setTimeout(() => {
-      i++;
-    }, 10000);*/
-  }
+  questionNumber++;
 };
 
-/*const timer = () => {
-  let i = 0;
-  let myInterval = setTimeout(() => {
-    i++, console.log(generateBenchmark());
-  }, 5000);
-  if (i === 60) {
-    clearInterval;
+const generateBenchmark = (e) => {
+  e.preventDefault();
+
+  formNode.remove();
+
+  const h1 = document.querySelector("h1");
+  h1.innerText = questions[questionNumber].question;
+
+  if (questions[questionNumber].type === "multiple") {
+    const formNode = document.createElement("form");
+
+    const button1 = document.createElement("button");
+    button1.className = "btn";
+    const button2 = document.createElement("button");
+    button2.className = "btn";
+    const br = document.createElement("br");
+    const button3 = document.createElement("button");
+    button3.className = "btn";
+    const button4 = document.createElement("button");
+    button4.className = "btn";
+
+    formNode.appendChild(button1);
+    formNode.appendChild(button2);
+    formNode.appendChild(br);
+    formNode.appendChild(button3);
+    formNode.appendChild(button4);
+
+    mainDiv.appendChild(formNode);
+  } else {
+    const formNode = document.createElement("form");
+
+    const button1 = document.createElement("button");
+    button1.className = "btn";
+    const button2 = document.createElement("button");
+    button2.className = "btn";
+
+    formNode.appendChild(button1);
+    formNode.appendChild(button2);
+
+    mainDiv.appendChild(formNode);
   }
-};*/
+
+  questionNumber++;
+};
+
+formNode.onsubmit = generateBenchmark;
