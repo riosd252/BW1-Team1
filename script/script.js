@@ -26,7 +26,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -104,98 +104,69 @@ const questions = [
   },
 ];
 
+// VARIABILE PER LA REGISTRAZIONE DEL PUNTEGGIO
 let studentScore = [];
 
+// VARIABILE "CONTATORE"
 let questionNumber = 0;
 
-// const formNode = document.querySelector("form");
+// SELEZIONE DEL FORM, NECESSARIO PER L'ESECUZIONE DELLE FUNZIONI
+const formNode = document.querySelector("form");
 
-const mainDiv = document.querySelector(".benchmark");
+// FUNZIONI NECESSARIE PER GENERARE DINAMICAMENTE I PULSANTI:
 
-window.onload = function () {
+// OPZIONE CORRETTA
+const correctOption = function () {
+  button = document.createElement("button");
+  button.className = "btn";
+  button.innerText = questions[questionNumber].correct_answer;
+  formNode.appendChild(button);
+};
+// OPZIONI ERRATE
+const incorrectOptions = function () {
+  for (let i = 0; i < questions[questionNumber].incorrect_answers.length; i++) {
+    button = document.createElement("button");
+    button.className = "btn";
+    button.innerText = questions[questionNumber].incorrect_answers[i];
+    formNode.appendChild(button);
+  }
+};
+
+// FUNZIONE PRINCIPALE, GENERA DINAMICAMENTE L'INTERA INTERFACCIA DEL QUIZ
+const loadQuestion = function () {
+  //SELEZIONE DEL TAG "h1" CONTENENTE LA DOMANDA E SUCCESSIVA ASSEGNAZIONE DEL TESTO
   const h1 = document.querySelector("h1");
   h1.innerText = questions[questionNumber].question;
 
-  if (questions[questionNumber].type === "multiple") {
-    const formNode = document.createElement("form");
+  // TRIGGER FUNZIONI PRECEDENTEMENTE CREATE PER GENERARE I PULSANTI
+  correctOption();
+  incorrectOptions();
 
-    const button1 = document.createElement("button");
-    button1.className = "btn";
-    const button2 = document.createElement("button");
-    button2.className = "btn";
-    const br = document.createElement("br");
-    const button3 = document.createElement("button");
-    button3.className = "btn";
-    const button4 = document.createElement("button");
-    button4.className = "btn";
+  // SELEZIONE DEL FOOTER E SUCCESSIVA ASSEGNAZIONE DEL TESTO INTERNO PER CONTEGGIO DOMANDE
+  const footer = document.getElementsByClassName("counterNum")[0];
+  footer.innerText = questionNumber + 1;
 
-    formNode.appendChild(button1);
-    formNode.appendChild(button2);
-    formNode.appendChild(br);
-    formNode.appendChild(button3);
-    formNode.appendChild(button4);
-
-    mainDiv.appendChild(formNode);
-  } else {
-    const formNode = document.createElement("form");
-
-    const button1 = document.createElement("button");
-    button1.className = "btn";
-    const button2 = document.createElement("button");
-    button2.className = "btn";
-
-    formNode.appendChild(button1);
-    formNode.appendChild(button2);
-
-    mainDiv.appendChild(formNode);
-  }
-
-  questionNumber++;
+  // AUMENTIAMO DI 1 IL NOSTRO CONTATORE
+  //questionNumber++;
 };
+
+window.onload = loadQuestion();
 
 const generateBenchmark = (e) => {
   e.preventDefault();
-
-  formNode.remove();
-
-  const h1 = document.querySelector("h1");
-  h1.innerText = questions[questionNumber].question;
-
-  if (questions[questionNumber].type === "multiple") {
-    const formNode = document.createElement("form");
-
-    const button1 = document.createElement("button");
-    button1.className = "btn";
-    const button2 = document.createElement("button");
-    button2.className = "btn";
-    const br = document.createElement("br");
-    const button3 = document.createElement("button");
-    button3.className = "btn";
-    const button4 = document.createElement("button");
-    button4.className = "btn";
-
-    formNode.appendChild(button1);
-    formNode.appendChild(button2);
-    formNode.appendChild(br);
-    formNode.appendChild(button3);
-    formNode.appendChild(button4);
-
-    mainDiv.appendChild(formNode);
+  const btn = e.submitter;
+  if (btn.innerText === questions[questionNumber].correct_answer) {
+    studentScore.push(1);
+    console.log(studentScore);
   } else {
-    const formNode = document.createElement("form");
-
-    const button1 = document.createElement("button");
-    button1.className = "btn";
-    const button2 = document.createElement("button");
-    button2.className = "btn";
-
-    formNode.appendChild(button1);
-    formNode.appendChild(button2);
-
-    mainDiv.appendChild(formNode);
+    studentScore.push(0);
+    console.log(studentScore);
   }
-
-  questionNumber++;
+  if (questionNumber <= 9) {
+    formNode.innerText = "";
+    questionNumber++;
+    loadQuestion();
+  }
 };
 
 formNode.onsubmit = generateBenchmark;
