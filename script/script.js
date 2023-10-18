@@ -8,8 +8,6 @@
 
 */
 
-let studentScore = [];
-
 const questions = [
   {
     category: "Science: Computers",
@@ -24,7 +22,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -94,55 +92,105 @@ const questions = [
   },
 ];
 
-/*for (let i = 0; i < questions.length; i++) {
-  const benchmarkMain = document.querySelector("main");
-  const benchmarkDiv = document.getElementById("benchmark-div");
+// VARIABILE PER LA REGISTRAZIONE DEL PUNTEGGIO
+let studentScore = [];
+let rightAnswers = 0;
+let wrongAnswers = 0;
 
-  const question = document.createElement("h1");
-  question.innerText = questions[i].question;
+// VARIABILE "CONTATORE"
+let questionNumber = 0;
 
-  const form = document.createElement("form");
+// SELEZIONE DEL FORM, NECESSARIO PER L'ESECUZIONE DELLE FUNZIONI
+const formNode = document.querySelector("form");
 
-  if (questions[i].type === "multiple") {
+// FUNZIONI NECESSARIE PER GENERARE DINAMICAMENTE I PULSANTI:
+
+// OPZIONE CORRETTA
+const correctOption = function () {
+  button = document.createElement("button");
+  button.className = "btn";
+  button.innerText = questions[questionNumber].correct_answer;
+  formNode.appendChild(button);
+};
+// OPZIONI ERRATE
+const incorrectOptions = function () {
+  for (let i = 0; i < questions[questionNumber].incorrect_answers.length; i++) {
+    button = document.createElement("button");
+    button.className = "btn";
+    button.innerText = questions[questionNumber].incorrect_answers[i];
+    formNode.appendChild(button);
   }
-}*/
+};
 
-/*let totalSeconds = 60;
+// FUNZIONE PER CALCOLARE RISPOSTE GIUSTE E SBAGLIATE
+const calcAnswers = function () {
+  for (let i = 0; i < studentScore.length; i++) {
+    if (studentScore[i] === 1) {
+      rightAnswers++;
+    } else {
+      wrongAnswers++;
+    }
+  }
+};
 
- function updateTimer() {
-  if (totalSeconds <= 0) {
-    clearInterval(timerId);
-    document.getElementById("time").textContent = "00";
-    return;
+// FUNZIONE PRINCIPALE, GENERA DINAMICAMENTE L'INTERA INTERFACCIA DEL QUIZ
+const loadQuestion = function () {
+  //SELEZIONE DEL TAG "h1" CONTENENTE LA DOMANDA E SUCCESSIVA ASSEGNAZIONE DEL TESTO
+  const h1 = document.querySelector("h1");
+  h1.innerText = questions[questionNumber].question;
+
+  // TRIGGER FUNZIONI PRECEDENTEMENTE CREATE PER GENERARE I PULSANTI
+  correctOption();
+  incorrectOptions();
+
+  // SELEZIONE DEL FOOTER E SUCCESSIVA ASSEGNAZIONE DEL TESTO INTERNO PER CONTEGGIO DOMANDE
+  const footer = document.getElementsByClassName("counterNum")[0];
+  footer.innerText = questionNumber + 1;
+};
+
+let totalSeconds = 60;
+
+window.onload = loadQuestion();
+
+const generateBenchmark = (e) => {
+  e.preventDefault();
+  const btn = e.submitter;
+  if (btn.innerText === questions[questionNumber].correct_answer) {
+    studentScore.push(1);
+  } else {
+    studentScore.push(0);
+  }
+
+  // AUMENTIAMO IL NOSTRO CONTATORE DOPO AVER SALVATO IL RISULTATO
+  questionNumber++;
+
+  if (questionNumber <= 9) {
+    formNode.innerText = "";
+    loadQuestion();
+    totalSeconds = 60;
+  } else {
+    calcAnswers();
+  }
+};
+
+formNode.onsubmit = generateBenchmark;
+
+function updateTimer() {
+  if (totalSeconds === 0) {
+    //clearInterval(timerId);
+    studentScore.push(0);
+    questionNumber++;
+    formNode.innerText = "";
+    loadQuestion();
+    totalSeconds = 60;
+    document.getElementById("time").innerText = "0";
   }
 
   const seconds = String(totalSeconds).padStart(2, "0");
-  document.getElementById("time").textContent = seconds;
+  document.getElementById("time").innerText = seconds;
   totalSeconds--;
 }
 
 const timerId = setInterval(updateTimer, 1000);
-updateTimer(60); */
 
-const generateBenchmark = () => {
-  for (let i = 0; i < questions.length; i++) {
-    const main = document.querySelector("main");
-
-    const h1 = document.querySelector("h1");
-    h1.innerText = questions[i].question;
-
-    /*let myInterval = setTimeout(() => {
-      i++;
-    }, 10000);*/
-  }
-};
-
-/*const timer = () => {
-  let i = 0;
-  let myInterval = setTimeout(() => {
-    i++, console.log(generateBenchmark());
-  }, 5000);
-  if (i === 60) {
-    clearInterval;
-  }
-};*/
+updateTimer();
