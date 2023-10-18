@@ -11,6 +11,7 @@ header {
 .logo {
   width: max-content;
   margin-left: 3%;
+}
 
 .clock-container {
   width: 100px;
@@ -126,7 +127,3 @@ svg {
   cursor: not-allowed;
   box-shadow: none;
 }
-/* a {
-  text-decoration: none;
-  /* pointer-events: none; */
-/* } */

@@ -1,0 +1,80 @@
+body {
+  background-image: url(../assets/images/Images/bg.jpg);
+  background-size: cover;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+header {
+  max-width: 80%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logo {
+  width: max-content;
+  margin-left: 3%;
+}
+.logo > img {
+  width: 150px;
+}
+.title > h1 {
+  font-size: 70px;
+  line-height: 10px;
+}
+.allBoxes {
+  padding-top: 200px;
+  width: 100%;
+}
+
+.box1 {
+  display: inline-block;
+  max-width: 10%;
+  text-align: left;
+  padding-right: 200px;
+}
+.box1 > h2 {
+  font-size: 60px;
+  margin-bottom: 0px;
+}
+.box1 > p {
+  margin-top: 1px;
+  font-size: 20px;
+}
+.box2 {
+  display: inline-block;
+  max-width: 10%;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+.donut {
+  display: inline-block;
+  width: 350px;
+  height: 350px;
+  /* position: absolute; */
+  top: 600px;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  border-left: solid 40px #00ffff;
+  border-bottom: solid 40px #00ffff;
+  border-top: solid 40px #00ffff;
+  border-right: solid 40px #d20094;
+  border-radius: 100%;
+}
+
+.box3 {
+  display: inline-block;
+  max-width: 10%;
+  text-align: right;
+  padding-left: 200px;
+}
+
+.box3 > h2 {
+  font-size: 60px;
+  margin-bottom: 0px;
+}
+.box3 > p {
+  margin-top: 1px;
+  font-size: 20px;
+}
