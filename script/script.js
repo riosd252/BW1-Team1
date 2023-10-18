@@ -84,15 +84,22 @@ const questions = [
   }
 ];
 
+<<<<<<< Updated upstream
 for (let i = 0; i < questions.length; i++) {
   const benchmarkMain = document.querySelector("main");
   const benchmarkDiv = document.getElementById("benchmark-div");
+=======
+// for (let i = 0; i < questions.length; i++) {
+//   const benchmarkMain = document.querySelector("main");
+//   const benchmarkDiv = document.getElementById("benchmark-div");
+>>>>>>> Stashed changes
 
-  const question = document.createElement("h1");
-  question.innerText = questions[i].question;
+//   const question = document.createElement("h1");
+//   question.innerText = questions[i].question;
 
-  const form = document.createElement("form");
+//   const form = document.createElement("form");
 
+<<<<<<< Updated upstream
   if (questions[i].type === "multiple") {
   }
 }
@@ -100,6 +107,14 @@ const agreed = document.querySelector("form");
 agreed.onsubmit = console.log("attiva funzione");
 let totalSeconds = 60;
 
+=======
+//   if (questions[i].type === "multiple") {
+//   }
+// }
+
+let totalSeconds = 60;
+
+>>>>>>> Stashed changes
 function updateTimer() {
   if (totalSeconds <= 0) {
     clearInterval(timerId);
@@ -114,3 +129,32 @@ function updateTimer() {
 
 const timerId = setInterval(updateTimer, 1000);
 updateTimer(60);
+<<<<<<< Updated upstream
+=======
+
+const generateBenchmark = () => {
+  for (let i = 0; i < questions.length; i++) {
+    const main = document.querySelector("main");
+
+    const h1 = document.querySelector("h1");
+    h1.innerText = questions[i].question;
+  }
+};
+
+let myInterval = setTimeout(() => {
+  i++;
+}, 5000);
+
+/*const timer = () => {
+  let i = 0;
+  let myInterval = setTimeout(() => {
+    i++, console.log(generateBenchmark());
+  }, 5000);
+  if (i === 60) {
+    clearInterval;
+  }
+};*/
+
+let submit = document.getElementById("submit");
+submit.document.preventDefault();
+>>>>>>> Stashed changes
