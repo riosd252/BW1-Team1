@@ -106,6 +106,8 @@ const questions = [
 
 // VARIABILE PER LA REGISTRAZIONE DEL PUNTEGGIO
 let studentScore = [];
+let rightAnswers = 0;
+let wrongAnswers = 0;
 
 // VARIABILE "CONTATORE"
 let questionNumber = 0;
@@ -132,6 +134,17 @@ const incorrectOptions = function () {
   }
 };
 
+// FUNZIONE PER CALCOLARE RISPOSTE GIUSTE E SBAGLIATE
+const calcAnswers = function () {
+  for (let i = 0; i < studentScore.length; i++) {
+    if (studentScore[i] === 1) {
+      rightAnswers++;
+    } else {
+      wrongAnswers++;
+    }
+  }
+};
+
 // FUNZIONE PRINCIPALE, GENERA DINAMICAMENTE L'INTERA INTERFACCIA DEL QUIZ
 const loadQuestion = function () {
   //SELEZIONE DEL TAG "h1" CONTENENTE LA DOMANDA E SUCCESSIVA ASSEGNAZIONE DEL TESTO
@@ -145,10 +158,9 @@ const loadQuestion = function () {
   // SELEZIONE DEL FOOTER E SUCCESSIVA ASSEGNAZIONE DEL TESTO INTERNO PER CONTEGGIO DOMANDE
   const footer = document.getElementsByClassName("counterNum")[0];
   footer.innerText = questionNumber + 1;
-
-  // AUMENTIAMO DI 1 IL NOSTRO CONTATORE
-  //questionNumber++;
 };
+
+let totalSeconds = 60;
 
 window.onload = loadQuestion();
 
@@ -157,16 +169,40 @@ const generateBenchmark = (e) => {
   const btn = e.submitter;
   if (btn.innerText === questions[questionNumber].correct_answer) {
     studentScore.push(1);
-    console.log(studentScore);
   } else {
     studentScore.push(0);
-    console.log(studentScore);
   }
+
+  // AUMENTIAMO IL NOSTRO CONTATORE DOPO AVER SALVATO IL RISULTATO
+  questionNumber++;
+
   if (questionNumber <= 9) {
     formNode.innerText = "";
-    questionNumber++;
     loadQuestion();
+    totalSeconds = 60;
+  } else {
+    calcAnswers();
   }
 };
 
 formNode.onsubmit = generateBenchmark;
+
+function updateTimer() {
+  if (totalSeconds === 0) {
+    //clearInterval(timerId);
+    studentScore.push(0);
+    questionNumber++;
+    formNode.innerText = "";
+    loadQuestion();
+    totalSeconds = 60;
+    document.getElementById("time").innerText = "0";
+  }
+
+  const seconds = String(totalSeconds).padStart(2, "0");
+  document.getElementById("time").innerText = seconds;
+  totalSeconds--;
+}
+
+const timerId = setInterval(updateTimer, 1000);
+
+updateTimer();

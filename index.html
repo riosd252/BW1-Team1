@@ -38,14 +38,23 @@
           Changing browser tab or opening other windows will
           <span class="boldli">invalidate the question.</span>
         </li>
-        <li>This exam will take approx. <span class="boldli">0-5 minutes.</span></li>
+        <li>
+          This exam will take approx. <span class="boldli">0-5 minutes.</span>
+        </li>
       </ul>
       <div>
-        <form class="promise">
-          <input type="checkbox" id="agree" onchange="document.getElementById('submit').disabled = !this.checked" required />
-          <label class="label" for="agree">I promise to answer myself without help from anyone</label>
+        <form class="promise" action="./benchmark.html">
+          <input
+            type="checkbox"
+            id="agree"
+            onchange="document.getElementById('submit').disabled = !this.checked"
+            required
+          />
+          <label class="label" for="agree"
+            >I promise to answer myself without help from anyone</label
+          >
           <button type="submit" id="submit" name="sendNewSms" disabled>
-            <a href="./index-benchmark.html">PROCEED</a>
+            PROCEED
           </button>
         </form>
       </div>

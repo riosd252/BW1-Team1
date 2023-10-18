@@ -22,9 +22,10 @@ header {
 }
 .benchmark > h1 {
   color: white;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 400;
   font-family: "Inter", sans-serif;
+  margin-bottom: 3rem;
 }
 .questionbold {
   font-weight: 700;
@@ -74,23 +75,28 @@ button::before {
 
 .question-count {
   color: white;
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 400;
   letter-spacing: 0.2em;
-  padding-top: 150px;
+  padding-top: 100px;
 }
 .out-of {
   color: #d20094;
 }
 .clock-container {
-  text-align: right;
+  width: max-content;
+  margin-inline-start: auto;
+  text-align: center;
 }
 .timerText {
-  font-size: 10px;
+  font-size: 0.5rem;
   color: white;
+  font-family: "Outfit", sans-serif;
 }
 
 #time {
-  font-size: 40px;
+  font-size: 2rem;
   color: white;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
 }
