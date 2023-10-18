@@ -1,8 +1,7 @@
 body {
-  background-image: url(../assets/images/Images/bg.jpg);
+  background-image: url(./images/Images/bg.jpg);
   background-size: cover;
-  padding-left: 10%;
-  padding-right: 10%;
+  color: white;
 }
 header {
   max-width: 80%;
@@ -12,9 +11,60 @@ header {
 .logo {
   width: max-content;
   margin-left: 3%;
+
+.clock-container {
+  width: 100px;
+  border: solid aqua;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  object-position: right;
+  display: inline-block;
 }
-.logo > img {
-  width: 150px;
+
+.timerText {
+  font-size: 10px;
+}
+
+#time {
+  font-size: 40px;
+}
+
+button {
+  width: 50%;
+  height: 60px;
+  opacity: 10%;
+  border-radius: 20px;
+}
+
+.countdown {
+  text-align: center;
+}
+
+.chart {
+  position: relative;
+  display: inline-block;
+}
+
+svg {
+  transform: rotate(-90deg);
+}
+
+.doughnut-background {
+  fill: none;
+  stroke: #f2f2f2;
+  stroke-width: 20;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 0;
+}
+
+.doughnut {
+  fill: none;
+  stroke: #3498db;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 0;
 }
 
 .welcome > h1 {
