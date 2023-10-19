@@ -1,0 +1,153 @@
+/* body {
+  background-image: url(./images/Images/bg.jpg);
+  background-size: cover;
+  padding: 10px;
+  max-width: 2000px;
+  /* font-family: "Inter", sans-serif; 
+}*/
+body {
+  background-image: url(../assets/images/Images/bg.jpg);
+  background-size: cover;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+header {
+  max-width: 80%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logo {
+  width: max-content;
+  margin-left: 3%;
+}
+.logo > img {
+  width: 150px;
+}
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+h2 {
+  font-size: 60px;
+  margin: 0;
+  text-align: center;
+}
+h3 {
+  font-size: 30px;
+  margin-top: 0;
+}
+h4 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.resultsTitleBox {
+  position: absolute;
+  left: 35%;
+  right: 35%;
+}
+
+/* /* .logo {
+  width: 200px;
+  margin-left: 3%;
+} */
+header {
+  width: 150px;
+  color: white;
+  padding: 10px;
+}
+main {
+  /* width: 100%; */
+  height: 700px;
+  margin: 100px;
+  margin-inline: auto;
+  /* padding: 70px;*/
+}
+
+.allBoxes {
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  margin: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 40%;
+}
+.box1,
+.box2,
+.DoughnutBox {
+  display: inline-block;
+  max-width: 33%;
+  margin-inline: auto;
+  margin: 150px;
+}
+
+.box1 > h2 {
+  font-weight: lighter;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+.box1 > p {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.box2 > h2 {
+  font-weight: lighter;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+.box2 > p {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+div .DoughnutBox {
+  margin: 10%;
+}
+button {
+  width: 250px;
+  height: 60px;
+  position: absolute;
+  left: 44%;
+  right: 44%;
+  background-color: transparent;
+  border: solid 2px white;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px 0px #00ffff;
+}
+
+.donut {
+  display: block;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-left: solid 40px #00ffff;
+  border-bottom: solid 40px #00ffff;
+  border-top: solid 40px #00ffff;
+  border-right: solid 40px #d20094;
+  border-radius: 100%;
+}
+
+.textInsideDonut {
+  padding: 15%;
+  font-weight: lighter;
+}
+
+div .blue-h4 {
+  color: #00ffff;
+}
