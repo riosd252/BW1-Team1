@@ -16,21 +16,21 @@ header {
 .logo > img {
   width: 150px;
 }
-.benchmark {
+main .benchmark {
   text-align: center;
   padding-top: 0px;
 }
-.benchmark > h1 {
+main .benchmark > h1 {
   color: white;
   font-size: 40px;
   font-weight: 400;
   font-family: "Inter", sans-serif;
   margin-bottom: 3rem;
 }
-.questionbold {
+main .questionbold {
   font-weight: 700;
 }
-.btn {
+main .btn {
   height: 80px;
   min-width: 400px;
   margin: 20px;
@@ -42,7 +42,7 @@ header {
   padding: 15px 20px;
   font-size: 20px;
 }
-.btn:hover {
+main .btn:hover {
   transition-duration: 800ms;
   height: 80px;
   min-width: 400px;
@@ -57,7 +57,7 @@ header {
   background-color: #d20094;
 }
 
-button::before {
+main button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -73,30 +73,169 @@ button::before {
   mask-composite: exclude;
 }
 
-.question-count {
+main .question-count {
   color: white;
   font-family: "Outfit", sans-serif;
   font-weight: 400;
   letter-spacing: 0.2em;
   padding-top: 100px;
 }
-.out-of {
+main .out-of {
   color: #d20094;
 }
-.clock-container {
+main .clock-container {
   width: max-content;
   margin-inline-start: auto;
   text-align: center;
 }
-.timerText {
-  font-size: 0.5rem;
+main .timerText {
+  font-size: 0.6rem;
   color: white;
   font-family: "Outfit", sans-serif;
+  transform: translateY(60px);
 }
 
-#time {
-  font-size: 2rem;
+main .timerText2 {
+  font-size: 0.6rem;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  transform: translateY(-125px);
+}
+
+main #time {
+  font-size: 3rem;
   color: white;
   font-family: "Outfit", sans-serif;
   font-weight: 400;
+  transform: translateY(-110px);
+}
+
+/*---------------------------------------------*/
+.hidden {
+  display: none;
+}
+
+.results {
+  color: white;
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: block;
+}
+
+.results h1 {
+  font-size: 60px;
+  margin-bottom: 0;
+}
+.results h2 {
+  margin: 0;
+  text-align: center;
+}
+.results h3 {
+  font-size: 30px;
+  margin-top: 0;
+}
+.results h4 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.results .resultsTitleBox {
+  font-weight: bold;
+  position: absolute;
+  left: 35%;
+  right: 35%;
+}
+
+.results .DoughnutBox {
+  width: 35%;
+  transform: translate(650px, 160px);
+}
+
+.results .box1 {
+  transform: translate(260px, -360px);
+}
+.results .box2 {
+  transform: translate(-310px, -948px);
+}
+.results .box1 > h2 {
+  font-size: 90px;
+  font-weight: lighter;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.results .box1 > p {
+  font-size: 20px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.results .box2 > h2 {
+  font-size: 90px;
+  font-weight: lighter;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+.results .box2 > p {
+  font: 20px;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+.results .box3 {
+  transform: translate(10px, -635px);
+  font-size: 35px;
+}
+.results .blueText {
+  color: #00ffff;
+  font-weight: 700;
+}
+.results .box4 {
+  width: 350px;
+  transform: translate(833px, -620px);
+  font-size: 29px;
+}
+
+.results div .DoughnutBox {
+  margin: 10%;
+}
+.resultsbtn {
+  width: 250px;
+  height: 60px;
+  position: absolute;
+  left: 44%;
+  right: 44%;
+  background-color: transparent;
+  border: solid 2px white;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px 0px #00ffff;
+  transform: translate(25px, 0px);
+}
+
+.results .chartCongrats {
+  color: white;
+  text-align: center;
+  font-size: 2.5px;
+  transform: translate(-9px, -7px);
+}
+
+.results .chartPassed {
+  color: white;
+  font-size: 2px;
+  transform: translate(-9px, -5px);
+}
+
+.results .chartEmail {
+  color: white;
+  text-align: center;
+  font-size: 2px;
+  transform: translate(-9px, -5px);
 }

@@ -22,29 +22,112 @@
       <div class="doughnut">
         <div class="chart">
           <div class="clock-container">
-            <!-- contenitore timer dentro doughnut -->
             <p class="timerText">SECONDS</p>
+            <svg width="50%" height="50%" viewBox="0 0 42 42" class="donut">
+              <circle
+                class="donut-hole"
+                cx="21"
+                cy="21"
+                r="15.91549430918954"
+                fill="transparent"
+              ></circle>
+
+              <circle
+                id="progression"
+                class="donut-segment"
+                cx="21"
+                cy="21"
+                r="15.91549430918954"
+                fill="transparent"
+                stroke="#00ffff"
+                stroke-width="4"
+                stroke-dasharray="100 0"
+                stroke-dashoffset="25"
+              ></circle>
+            </svg>
             <div id="time"></div>
-            <p class="timerText">REMAINING</p>
+            <p class="timerText2">REMAINING</p>
           </div>
         </div>
         <div class="question-container"></div>
       </div>
       <div class="benchmark">
         <h1></h1>
-        <form>
-          <!-- <button class="btn">&lt;input type = "check"&gt;</button>
-          <button class="btn selected">&lt;input type = "checkbox"&gt;</button>
-          <br />
-          <button class="btn">&lt;"checkbox"&gt;</button>
-          <button class="btn">&lt;input type = "button"&gt;</button> -->
-        </form>
+        <form></form>
         <h3 class="question-count">
           QUESTION <span class="counterNum">1</span>
           <span class="out-of"> /10</span>
         </h3>
       </div>
     </main>
+    <!-- TU NON HAI VISTO NIENTE -->
+    <div class="hidden">
+      <div class="resultsTitleBox">
+        <h1>Results</h1>
+        <h3>The summary of your answers:</h3>
+      </div>
+      <div class="DoughnutBox">
+        <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
+          <circle
+            class="donut-hole"
+            cx="21"
+            cy="21"
+            r="15.91549430918954"
+            fill="transparent"
+          ></circle>
+          <circle
+            class="donut-ring"
+            cx="21"
+            cy="21"
+            r="15.91549430918954"
+            fill="transparent"
+            stroke="#00FFFF"
+            stroke-width="5"
+          ></circle>
+          <circle
+            class="donut-segment"
+            cx="21"
+            cy="21"
+            r="15.91549430918954"
+            fill="transparent"
+            stroke="#d20094"
+            stroke-width="5"
+            stroke-dasharray="65 35"
+            stroke-dashoffset="25"
+          ></circle>
+          <!-- 
+                PARAMETRI STROKE-DASHARRAY:
+
+                PRIMO VALORE = RISPOSTE ERRATE
+                SECONDO VALORE = RISPOSTE GIUSTE 
+              -->
+        </svg>
+      </div>
+      <div class="allBoxes">
+        <div class="box1">
+          <h2 class="correctText">Correct</h2>
+          <h2 class="correctPercent">66.7%</h2>
+          <p class="correctOutOf">4/6 questions</p>
+        </div>
+        <div>
+          <p class="box3">
+            Congratulations!
+            <br />
+            <span class="blueText">You passed the exam.</span>
+          </p>
+          <p class="box4">
+            We'll send you the certificate in few minutes. Check your email
+            (including promotions/spam folder)
+          </p>
+        </div>
+        <div class="box2">
+          <h2 class="wrongText">Wrong</h2>
+          <h2 class="wrongPercent">33.3%</h2>
+          <p class="wrongOutOf">2/6 questions</p>
+        </div>
+      </div>
+    </div>
+    <button class="hidden resultsbtn" type="button">RATE US</button>
     <script src="./script/script.js"></script>
   </body>
 </html>
