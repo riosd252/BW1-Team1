@@ -106,8 +106,8 @@ const questions = [
 
 // VARIABILE PER LA REGISTRAZIONE DEL PUNTEGGIO
 let studentScore = [];
-let rightAnswers = 0;
-let wrongAnswers = 0;
+let rightAnswers = null;
+let wrongAnswers = null;
 
 // VARIABILE "CONTATORE"
 let questionNumber = 0;
@@ -145,6 +145,8 @@ const calcAnswers = function () {
   }
 };
 
+const calcPercent = (totAns) => (totAns / 10) * 100;
+
 // FUNZIONE PRINCIPALE, GENERA DINAMICAMENTE L'INTERA INTERFACCIA DEL QUIZ
 const loadQuestion = function () {
   //SELEZIONE DEL TAG "h1" CONTENENTE LA DOMANDA E SUCCESSIVA ASSEGNAZIONE DEL TESTO
@@ -162,7 +164,30 @@ const loadQuestion = function () {
 
 let totalSeconds = 60;
 
+function updateTimer() {
+  if (totalSeconds === 0 && questionNumber < 9) {
+    //clearInterval(timerId);
+    studentScore.push(0);
+    questionNumber++;
+    formNode.innerText = "";
+    loadQuestion();
+    totalSeconds = 60;
+    document.getElementById("time").innerText = "0";
+  } else if (totalSeconds === 0 && questionNumber === 9) {
+    clearInterval(timerId);
+    studentScore.push(0);
+    calcAnswers();
+  }
+
+  const seconds = String(totalSeconds).padStart(2, "0");
+  document.getElementById("time").innerText = seconds;
+  totalSeconds--;
+}
+
+const timerId = setInterval(updateTimer, 1000);
+
 window.onload = loadQuestion();
+updateTimer();
 
 const generateBenchmark = (e) => {
   e.preventDefault();
@@ -181,28 +206,13 @@ const generateBenchmark = (e) => {
     loadQuestion();
     totalSeconds = 60;
   } else {
+    clearInterval(timerId);
     calcAnswers();
+    const rightPercent = calcPercent(rightAnswers);
+    const wronPercent = calcPercent(wrongAnswers);
+    console.log(rightPercent);
+    console.log(wronPercent);
   }
 };
 
 formNode.onsubmit = generateBenchmark;
-
-function updateTimer() {
-  if (totalSeconds === 0) {
-    //clearInterval(timerId);
-    studentScore.push(0);
-    questionNumber++;
-    formNode.innerText = "";
-    loadQuestion();
-    totalSeconds = 60;
-    document.getElementById("time").innerText = "0";
-  }
-
-  const seconds = String(totalSeconds).padStart(2, "0");
-  document.getElementById("time").innerText = seconds;
-  totalSeconds--;
-}
-
-const timerId = setInterval(updateTimer, 1000);
-
-updateTimer();
