@@ -115,18 +115,14 @@ let questionNumber = 0;
 // SELEZIONE DEL FORM, NECESSARIO PER L'ESECUZIONE DELLE FUNZIONI
 const formNode = document.querySelector("form");
 
-// FUNZIONI NECESSARIE PER GENERARE DINAMICAMENTE I PULSANTI:
+// FUNZIONE NECESSARIA PER GENERARE DINAMICAMENTE I PULSANTI:
 
-// OPZIONE CORRETTA
-const correctOption = function () {
-  button = document.createElement("button");
-  button.className = "btn";
-  button.innerText = questions[questionNumber].correct_answer;
-  formNode.appendChild(button);
-};
-// OPZIONI ERRATE
-const incorrectOptions = function () {
-  for (let i = 0; i < questions[questionNumber].incorrect_answers.length; i++) {
+const generateOptions = function () {
+  const randNum = Math.floor(Math.random() * 4);
+  const answerToInsert = questions[questionNumber].correct_answer;
+  const answersArr = questions[questionNumber].incorrect_answers;
+  answersArr.splice(randNum, 0, answerToInsert);
+  for (let i = 0; i < answersArr.length; i++) {
     button = document.createElement("button");
     button.className = "btn";
     button.innerText = questions[questionNumber].incorrect_answers[i];
@@ -153,9 +149,8 @@ const loadQuestion = function () {
   const h1 = document.querySelector("h1");
   h1.innerText = questions[questionNumber].question;
 
-  // TRIGGER FUNZIONI PRECEDENTEMENTE CREATE PER GENERARE I PULSANTI
-  correctOption();
-  incorrectOptions();
+  // INVOCA FUNZIONE PRECEDENTEMENTE CREATA PER GENERARE I PULSANTI
+  generateOptions();
 
   // SELEZIONE DEL FOOTER E SUCCESSIVA ASSEGNAZIONE DEL TESTO INTERNO PER CONTEGGIO DOMANDE
   const footer = document.getElementsByClassName("counterNum")[0];
