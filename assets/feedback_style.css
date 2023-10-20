@@ -35,11 +35,17 @@ p {
   margin-bottom: 4rem;
 }
 
-.stars {
+svg {
   cursor: pointer;
   margin-inline: auto;
 }
 
+path {
+  fill: #393939;
+}
+.star-is-active path {
+  fill: #00ffff;
+}
 input {
   display: block;
   width: 40.8rem;
