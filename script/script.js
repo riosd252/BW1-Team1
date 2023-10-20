@@ -189,6 +189,16 @@ function updateTimer() {
     let wrongStr = wrongPercent.toString();
     let resArr = wrongStr + " " + rightStr;
     donutSegment.setAttribute("stroke-dasharray", resArr);
+    if (wrongPercent > rightPercent) {
+      const boxP1 = document.querySelector(".boxp1");
+      boxP1.innerText = "Too Bad!";
+      const blueText = document.querySelector(".blueText");
+      blueText.innerText = "You have not passed.";
+      blueText.className("redText");
+      const boxP2 = document.querySelector(".boxp2");
+      boxP2.innerText =
+        "Our test is challenging. Please retry when you are better prepared.";
+    }
   }
 
   const seconds = String(totalSeconds).padStart(2, "0");
@@ -245,6 +255,16 @@ const generateBenchmark = (e) => {
     let wrongStr = wrongPercent.toString();
     let resArr = wrongStr + " " + rightStr;
     donutSegment.setAttribute("stroke-dasharray", resArr);
+    if (wrongPercent > rightPercent) {
+      const boxP1 = document.querySelector(".boxp1");
+      boxP1.innerText = "Too Bad!";
+      const blueText = document.querySelector(".blueText");
+      blueText.innerText = "You have not passed.";
+      blueText.classList.add("redText");
+      const boxP2 = document.querySelector(".boxp2");
+      boxP2.innerText =
+        "Our test is challenging. Please retry when you are better prepared.";
+    }
   }
 };
 
