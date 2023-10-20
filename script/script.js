@@ -174,8 +174,21 @@ function updateTimer() {
     studentScore.push(0);
     calcAnswers();
     const rightPercent = calcPercent(rightAnswers);
-    const wronPercent = calcPercent(wrongAnswers);
+    const wrongPercent = calcPercent(wrongAnswers);
     replaceHidden();
+    let right = document.querySelector(".correctPercent");
+    right.innerText = rightPercent + "%";
+    let rightnum = document.querySelector(".correctOutOf");
+    rightnum.innerText = rightPercent / 10 + "/10 questions";
+    let wrong = document.querySelector(".wrongPercent");
+    wrong.innerText = wrongPercent + "%";
+    let wrongnum = document.querySelector(".wrongOutOf");
+    wrongnum.innerText = wrongPercent / 10 + "/10 questions";
+    let donutSegment = document.querySelector(".donut-segment2");
+    let rightStr = rightPercent.toString();
+    let wrongStr = wrongPercent.toString();
+    let resArr = wrongStr + " " + rightStr;
+    donutSegment.setAttribute("stroke-dasharray", resArr);
   }
 
   const seconds = String(totalSeconds).padStart(2, "0");
@@ -217,8 +230,21 @@ const generateBenchmark = (e) => {
     clearInterval(timerId);
     calcAnswers();
     const rightPercent = calcPercent(rightAnswers);
-    const wronPercent = calcPercent(wrongAnswers);
+    const wrongPercent = calcPercent(wrongAnswers);
     replaceHidden();
+    let right = document.querySelector(".correctPercent");
+    right.innerText = rightPercent + "%";
+    let rightnum = document.querySelector(".correctOutOf");
+    rightnum.innerText = rightPercent / 10 + "/10 questions";
+    let wrong = document.querySelector(".wrongPercent");
+    wrong.innerText = wrongPercent + "%";
+    let wrongnum = document.querySelector(".wrongOutOf");
+    wrongnum.innerText = wrongPercent / 10 + "/10 questions";
+    let donutSegment = document.querySelector(".donut-segment2");
+    let rightStr = rightPercent.toString();
+    let wrongStr = wrongPercent.toString();
+    let resArr = wrongStr + " " + rightStr;
+    donutSegment.setAttribute("stroke-dasharray", resArr);
   }
 };
 
