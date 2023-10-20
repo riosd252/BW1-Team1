@@ -189,7 +189,7 @@ function updateTimer() {
     let wrongStr = wrongPercent.toString();
     let resArr = wrongStr + " " + rightStr;
     donutSegment.setAttribute("stroke-dasharray", resArr);
-    if (wrongPercent > rightPercent) {
+    if (rightPercent < 60) {
       const boxP1 = document.querySelector(".boxp1");
       boxP1.innerText = "Too Bad!";
       const blueText = document.querySelector(".blueText");
@@ -255,7 +255,7 @@ const generateBenchmark = (e) => {
     let wrongStr = wrongPercent.toString();
     let resArr = wrongStr + " " + rightStr;
     donutSegment.setAttribute("stroke-dasharray", resArr);
-    if (wrongPercent > rightPercent) {
+    if (rightPercent < 60) {
       const boxP1 = document.querySelector(".boxp1");
       boxP1.innerText = "Too Bad!";
       const blueText = document.querySelector(".blueText");

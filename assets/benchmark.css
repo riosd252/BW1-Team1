@@ -16,6 +16,11 @@ header {
 .logo > img {
   width: 150px;
 }
+
+main {
+  transform: translateY(-100px);
+}
+
 main .benchmark {
   text-align: center;
   padding-top: 0px;
